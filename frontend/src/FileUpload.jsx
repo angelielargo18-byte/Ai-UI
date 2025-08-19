@@ -45,8 +45,7 @@ function FileUpload({ onFileUpload, onUploadStatus }) {
           onFileUpload(file, { success: false, message: "Upload cancelled ❌" });
         }
         e.target.value = null;
-        if (onUploadStatus) onUploadStatus("end", file);
-        return;
+        if (onUploadStatus) return onUploadStatus("end", file);
       }
 
       onFileUpload(file, { success: true, message: "Upload complete ✅" });
@@ -55,6 +54,7 @@ function FileUpload({ onFileUpload, onUploadStatus }) {
       onFileUpload(file, { success: false, message: "Upload failed ❌" });
     }
     e.target.value = null;
+    if (onUploadStatus) return onUploadStatus("end", file);
   }
 };
 

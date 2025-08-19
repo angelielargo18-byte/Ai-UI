@@ -6,6 +6,8 @@ from rbac import create_student_account
 app = Flask(__name__)
 CORS(app)  # allow frontend to talk to backend
 
+STUDENTS_FILE = os.path.join(os.path.dirname(__file__), "accounts", "students.json")
+
 # configure upload folder
 UPLOAD_FOLDER = os.path.join(os.getcwd(), "uploads")
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
@@ -43,6 +45,13 @@ def register():
     if "error" in result:
         return jsonify(result), 409
     return jsonify(result)
+
+import json
+@app.route("/fetch", methods=["GET"])
+def fetch():
+    
+    with open(STUDENTS_FILE, "r", encoding="utf-8") as f:
+        return jsonify(json.load(f))
 
 if __name__ == "__main__":
     app.run(debug=True, port=5000)

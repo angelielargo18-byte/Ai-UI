@@ -79,9 +79,9 @@
     color: transparent;
 	background: linear-gradient(
 		90deg,
-		#EDEDED 30%,
-		#DCDCDC 50%,
-		#EDEDED 70%
+		#a5a5a5 30%,
+		#909090 50%,
+		#a5a5a5 70%
 	);
 	background-size: 400% 100%;
 	animation: uploading 1.5s infinite linear;

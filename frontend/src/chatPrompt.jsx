@@ -5,7 +5,7 @@ import FileUpload from "./FileUpload";
 function ChatPrompt() {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
-  const [uploadingId, setUploadingId] = useState(null); 
+  const [uploadingId, setUploadingId] = useState(null);
   const boxRef = useRef(null);
 
   const sendMessage = (text) => {
@@ -16,7 +16,7 @@ function ChatPrompt() {
     setTimeout(() => {
       setMessages((prev) => [
         ...prev,
-        { sender: "bot", text: "Wag kang pumasok. Unahin mo ang iyong sarili, magpahinga ka at sulitin ang mga oras na ika'y nakakahinga pa", type: "defaultRes"},
+        { sender: "bot", text: "Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet", type: "defaultRes" },
       ]);
     }, 500);
   };
@@ -33,25 +33,25 @@ function ChatPrompt() {
 
   // Handle upload status for loading message
   const handleUploadStatus = (status, file) => {
-  if (status === "start") {
-    // create a unique id for this upload
-    const id = Date.now();
-    setUploadingId(id);
+    if (status === "start") {
+      // create a unique id for this upload
+      const id = Date.now();
+      setUploadingId(id);
 
-    // attach id to the file object
-    file.id = id;
+      // attach id to the file object
+      file.id = id;
 
-    setMessages((prev) => [
-      ...prev,
-      { sender: "bot", text: `Uploading ${file.name}...`, id, type: "uploading" },
-    ]);
-    return id;
-  } else if (status === "end" && file?.id) {
-    // Remove the loading message using file.id
-    setMessages((prev) => prev.filter((msg) => msg.id !== file.id));
-    setUploadingId(null);
-  }
-};
+      setMessages((prev) => [
+        ...prev,
+        { sender: "bot", text: `Uploading ${file.name}...`, id, type: "uploading" },
+      ]);
+      return id;
+    } else if (status === "end" && file?.id) {
+      // Remove the loading message using file.id
+      setMessages((prev) => prev.filter((msg) => msg.id !== file.id));
+      setUploadingId(null);
+    }
+  };
 
   // when a file is selected in FileUpload
   const handleFileSelect = (file, result) => {
@@ -61,7 +61,7 @@ function ChatPrompt() {
     ]);
 
     // Bot's message showing upload status
-    setMessages((prev) => [...prev, { sender: "bot", text: result.message, type: "uploaded"}]);
+    setMessages((prev) => [...prev, { sender: "bot", text: result.message, type: "uploaded" }]);
   };
 
   // Scroll to the bottom of the chat box when messages change
@@ -76,26 +76,26 @@ function ChatPrompt() {
       <div className="mainContent flex h-full justify-center items-center">
         {/* NavBar */}
         <div className="navBar w-full h-full flex flex-col justify-between z-10">
-            <div className="flex flex-col gap-10 pl-[6%]">
-                <div className="flex mb-10 ml-[-3.4%] gap-[5%] items-center">
-                  <button className="nav w-auto !py-4">
-                    <img src="./public/images/PDM-Logo.svg" alt="PDM-LOGO" className="navBtn w-[10vw] aspect-square"/>
-                  </button>
-                  <h1 className="text-[#9A3A24] font-sans text-[clamp(1rem,5vw,5rem)] font-bold">PDM</h1>
-                </div>
-                <button className="nav w-auto">
-                  <img src="./public/navIco/menu.png" alt="Dashboard" className="navBtn w-[3vw] aspect-square"/>
-                </button>
-                <FileUpload onFileUpload={handleFileSelect} onUploadStatus={handleUploadStatus} />
-                <button className="nav w-auto">
-                  <img src="./public/navIco/calendar-2.png" alt="Schedule" className="navBtn w-[3vw] aspect-square"/>
-                </button>
-                <button className="nav w-auto">
-                  <img src="./public/navIco/setting.png" alt="Settings" className="navBtn w-[3vw] aspect-square"/>
-                </button>
-                <button className="nav w-auto">
-                  <img src="./public/navIco/profile-circle-1.png" alt="Profile" className="navBtn w-[3vw] aspect-square"/>
-                </button>
+          <div className="flex flex-col gap-10 pl-[6%]">
+            <div className="flex mb-10 ml-[-3.4%] gap-[5%] items-center">
+              <button className="nav w-auto !py-4">
+                <img src="./public/images/PDM-Logo.svg" alt="PDM-LOGO" className="navBtn w-[10vw] aspect-square" />
+              </button>
+              <h1 className="text-[#9A3A24] font-sans text-[clamp(1rem,4vw,4.5rem)] font-bold">PDM</h1>
+            </div>
+            <button className="nav w-auto">
+              <img src="./public/navIco/menu.png" alt="Dashboard" className="navBtn w-[3vw] aspect-square" />
+            </button>
+            <FileUpload onFileUpload={handleFileSelect} onUploadStatus={handleUploadStatus} />
+            <button className="nav w-auto">
+              <img src="./public/navIco/calendar-2.png" alt="Schedule" className="navBtn w-[3vw] aspect-square" />
+            </button>
+            <button className="nav w-auto">
+              <img src="./public/navIco/setting.png" alt="Settings" className="navBtn w-[3vw] aspect-square" />
+            </button>
+            <button className="nav w-auto">
+              <img src="./public/navIco/profile-circle-1.png" alt="Profile" className="navBtn w-[3vw] aspect-square" />
+            </button>
           </div>
         </div>
         <div className="dash_one absolute w-[25%] h-full bg-[#9A3A24] z-1 left-0"></div>
@@ -105,11 +105,18 @@ function ChatPrompt() {
         {/* CHAT BOX */}
         <div className="main flex flex-col gap-2 justify-center items-center w-full h-screen">
           {/* Header for Chat Box */}
-           <div className=" w-full h-[8%]">
+          <div className=" w-full h-[8%]  flex justify-between px-5">
+            <div className="flex flex-row justify-between w-full">
+              <div className="flex w-[50%] justify-start items-center">
+                <img src="/navIco/wanchain-(wan).png" alt="Logo " />
+                <h1 className="text-[clamp(1rem,2vw,2rem)] font-medium w-[50%]">Intelligent System</h1>
+              </div>
 
+              <h1 className="text-[clamp(1rem,2vw,2rem)] font-medium">User</h1>
             </div>
+          </div>
           <div className="chatBox flex flex-col justify-between items-center w-[95%] h-[85%] rounded-lg !p-4">
-           
+
             {/* Displays the message and response  */}
             <div
               ref={boxRef}
@@ -124,11 +131,11 @@ function ChatPrompt() {
                     msg.type === "uploading"
                       ? "uploading botRespo"
                       : msg.type === "uploaded" || msg.type === "message"
-                      ? "botRespo bg-green-200 self-start"
-                      : msg.sender === "user"
-                      ? "bg-blue-200 userRespo self-end break-words whitespace-normal !rounded-sm"
-                      : "bg-green-200 botRespo self-start break-words whitespace-normal !rounded-sm"
-                  }`}
+                        ? "botRespo bg-green-200 self-start"
+                        : msg.sender === "user"
+                          ? "bg-blue-200 userRespo self-end break-words whitespace-normal !rounded-sm"
+                          : "bg-green-200 botRespo self-start break-words whitespace-normal !rounded-sm"
+                    }`}
                 >
                   {msg.text}
                 </div>

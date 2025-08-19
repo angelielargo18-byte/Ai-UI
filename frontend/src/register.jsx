@@ -63,6 +63,7 @@ function Register({ goLogin }) {
               type="text"
               className="login_input"
               placeholder="Enter Student Name"
+              required
             />
             <input
               name="password"
@@ -71,6 +72,7 @@ function Register({ goLogin }) {
               type="password"
               className="login_input"
               placeholder="Create Password"
+              required
             />
             <input
               name="confirmPassword"
@@ -79,6 +81,7 @@ function Register({ goLogin }) {
               type="password"
               className="login_input"
               placeholder="Confirm Password"
+              required
             />
             <input
               name="email"
@@ -87,6 +90,7 @@ function Register({ goLogin }) {
               type="email"
               className="login_input"
               placeholder="user.pdm@gmail.com"
+              required
             />
             <div className="h-[2px] w-[80%] bg-gray-500 my-5"></div>
             <div className="flex flex-row w-[81%] justify-around gap-2">
@@ -95,6 +99,7 @@ function Register({ goLogin }) {
                 value={form.course}
                 onChange={handleChange}
                 className="login_input"
+                required
               >
                 <option value="" disabled>
                   -- Select Course --
@@ -126,6 +131,7 @@ function Register({ goLogin }) {
                 value={form.year}
                 onChange={handleChange}
                 className="login_input"
+                required
               >
                 <option value="" disabled>
                   -- Select Year --
@@ -144,6 +150,7 @@ function Register({ goLogin }) {
               type="text"
               className="login_input"
               placeholder="PDM-0000-0000000"
+              required
             />
             <div className="h-[2px] w-[80%] bg-gray-500 my-5"></div>
             <div className="w-full flex flex-col gap-4 items-center justify-center">

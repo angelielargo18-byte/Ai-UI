@@ -18,5 +18,35 @@
       "course": "BSCS"
     },
     "password": "123"
+  },
+  "PDM-2023-003214": {
+    "id": "PDM-2023-003214",
+    "name": "Triztan Dale",
+    "role": "student",
+    "labels": {
+      "year": "Third Year",
+      "course": "BSCS"
+    },
+    "password": "aeiou"
+  },
+  "PDM-2023-003213": {
+    "id": "PDM-2023-003213",
+    "name": "Triztan Dale",
+    "role": "student",
+    "labels": {
+      "year": "",
+      "course": ""
+    },
+    "password": "hello"
+  },
+  "PDM-2023-003212": {
+    "id": "PDM-2023-003212",
+    "name": "Triztan Dale",
+    "role": "student",
+    "labels": {
+      "year": "",
+      "course": ""
+    },
+    "password": ""
   }
 }
